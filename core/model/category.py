@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 from core.model.base import Base
@@ -19,6 +19,6 @@ class Category(Base):
     )
 
     #Для иерархии категорий, опционально?
-    #Труктура иерархии
+    #Cтруктура иерархии
     #parent = relationship("Category", remote_side=[id])
     #children = relationship("Category")
