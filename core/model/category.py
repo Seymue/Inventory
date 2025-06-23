@@ -14,11 +14,11 @@ class Category(Base):
 
     objects = relationship(
         "Object",
-        back_populates="category"
+        back_populates="category",
+        lazy="selectin"
     )
 
     #Для иерархии категорий, опционально?
     #Труктура иерархии
     #parent = relationship("Category", remote_side=[id])
     #children = relationship("Category")
-

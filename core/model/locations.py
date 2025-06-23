@@ -12,5 +12,6 @@ class Locations(Base):
 
     objects = relationship(
         "Object",
-        back_populates="location"
+        back_populates="location",
+        lazy="selectin"
     )
