@@ -8,7 +8,7 @@ class Locations(Base):
     __tablename__ = "Locations"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(100), nullable=False)
+    name_2022 = Column(String(100), nullable=False)
 
     objects = relationship(
         "Object",

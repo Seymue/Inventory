@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import sys
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import QFile
+from ui.ui_mainwindow import Ui_MainWindow
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    window = MainWindow()
+    window.show()
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sys.exit(app.exec())

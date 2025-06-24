@@ -10,12 +10,13 @@ class Object(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
     inventory_number = Column(Integer, nullable=False)
+    quantity = Column(Integer, nullable=False)
 
     # Внешние ключи
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
     location_id = Column(Integer, ForeignKey('locations.id'), nullable=False)
 
-    # сomments = Column(String(1000), nullable=True)
+    comments = Column(String(1000), nullable=True)
 
 # Связи
     category = relationship(
