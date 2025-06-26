@@ -1,16 +1,13 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-
 from core.model.base import Base
 
 
 class Category(Base):
-    __tablename__ = "Category"
+    __tablename__ = "categories"  # Исправлено на нижний регистр
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
-    #Для иерархии категорий, опционально
-    #parent_id = Column(Integer, ForeignKey('Category.id'), nullable=True)  # Может быть NULL для корневых категорий
 
     objects = relationship(
         "Object",
@@ -18,7 +15,5 @@ class Category(Base):
         lazy="selectin"
     )
 
-    #Для иерархии категорий, опционально?
-    #Cтруктура иерархии
-    #parent = relationship("Category", remote_side=[id])
-    #children = relationship("Category")
+    def __repr__(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"

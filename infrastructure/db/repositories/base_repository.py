@@ -8,7 +8,7 @@ class BaseRepository:
 
     def get_by_id(self, id: int):
         """Получение записи по ID"""
-        return self.session.query(self.model).filter(self.model.id == id).first()
+        return self.session.get(self.model, id)
 
     def get_all(self):
         """Получение всех записей"""
@@ -18,6 +18,7 @@ class BaseRepository:
         """Добавить новую запись"""
         self.session.add(instance)
         self.session.commit()
+        self.session.refresh(instance)  # Обновляем экземпляр
         return instance
 
     def delete(self, instance):
@@ -28,4 +29,5 @@ class BaseRepository:
     def update(self, instance):
         """Обновить запись"""
         self.session.commit()
+        self.session.refresh(instance)
         return instance
