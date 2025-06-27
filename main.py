@@ -1,8 +1,8 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from PySide6.QtCore import QFile
 from ui.ui_mainwindow import Ui_MainWindow
-
+from ui.ui_addForm import Ui_AddForm  # Импорт интерфейса формы добавления
 
 class MainWindow(QMainWindow):
     def __init__(self):

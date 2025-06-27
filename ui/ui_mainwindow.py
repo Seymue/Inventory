@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QHeaderView, QLineEdit, QMainWindow, QMenuBar,
     QPushButton, QSizePolicy, QStatusBar, QTableView,
-    QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget, QDialog)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -77,6 +77,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.addButton = QPushButton(self.widget_5)
         self.addButton.setObjectName(u"addButton")
+        self.addButton.clicked.connect(self.open_add_form)
 
         self.verticalLayout_3.addWidget(self.addButton)
 
@@ -135,4 +136,13 @@ class Ui_MainWindow(object):
         self.editButton.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c", None))
         self.deleteButton.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
+
+    def open_add_form(self):
+        """Открывает диалоговое окно добавления"""
+        dialog = QDialog(self)  # Создаем диалог
+        add_form = Ui_AddForm()  # Создаем UI формы
+        add_form.setupUi(dialog)  # Инициализируем UI в диалоге
+
+        # Показываем диалог как модальное окно
+        dialog.exec()
 
