@@ -110,6 +110,7 @@
                   <property name="styleSheet">
                    <string notr="true">background-color: #27AE60;
 
+
     color: white;
     border: none;          
     padding: 5px 10px;        
