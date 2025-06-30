@@ -63,13 +63,14 @@ class Ui_MainWindow(object):
         self.findButton.setStyleSheet(u"background-color: #007ACC;  \n"
 "    color: white;         \n"
 "       \n"
-"    padding: 8px 15px;        \n"
+"    padding: 8px 5px;  \n"
 "    border-radius: 4px;       \n"
 "        \n"
 "    font-family: 'Segoe UI';   \n"
 "    font-size: 8pt; \n"
 "    padding-top: 6px;\n"
-"    padding-bottom: 4px;")
+"    padding-bottom: 4px;\n"
+"")
 
         self.verticalLayout_2.addWidget(self.findButton)
 
