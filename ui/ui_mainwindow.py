@@ -16,15 +16,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QHeaderView, QLineEdit, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QStatusBar, QTableView,
-    QVBoxLayout, QWidget, QDialog)
+    QHeaderView, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStatusBar, QTableView, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(993, 646)
+        MainWindow.resize(963, 615)
+        MainWindow.setStyleSheet(u"background-color: #1E1E1E; ")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -41,7 +42,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.frame = QFrame(self.widget_2)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color: white;")
+        self.frame.setStyleSheet(u"background-color: #1E1E1E; ")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
@@ -53,11 +54,22 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.findText = QLineEdit(self.widget_4)
         self.findText.setObjectName(u"findText")
+        self.findText.setStyleSheet(u"color: white;")
 
         self.verticalLayout_2.addWidget(self.findText)
 
         self.findButton = QPushButton(self.widget_4)
         self.findButton.setObjectName(u"findButton")
+        self.findButton.setStyleSheet(u"background-color: #007ACC;  \n"
+"    color: white;         \n"
+"       \n"
+"    padding: 8px 15px;        \n"
+"    border-radius: 4px;       \n"
+"        \n"
+"    font-family: 'Segoe UI';   \n"
+"    font-size: 8pt; \n"
+"    padding-top: 6px;\n"
+"    padding-bottom: 4px;")
 
         self.verticalLayout_2.addWidget(self.findButton)
 
@@ -77,17 +89,37 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.addButton = QPushButton(self.widget_5)
         self.addButton.setObjectName(u"addButton")
-        self.addButton.clicked.connect(self.open_add_form)
+        self.addButton.setStyleSheet(u"background-color: #27AE60;     \n"
+"    color: white;         \n"
+"    border: none;          \n"
+"    padding: 5px 10px;        \n"
+"    border-radius: 4px;                 \n"
+"    font-family: 'Segoe UI';   \n"
+"    font-size: 8pt; ")
 
         self.verticalLayout_3.addWidget(self.addButton)
 
         self.editButton = QPushButton(self.widget_5)
         self.editButton.setObjectName(u"editButton")
+        self.editButton.setStyleSheet(u"background-color: #F39C12;       \n"
+"    color: white;         \n"
+"    border: none;          \n"
+"    padding: 5px 10px;        \n"
+"    border-radius: 4px;                 \n"
+"    font-family: 'Segoe UI';   \n"
+"    font-size: 8pt; ")
 
         self.verticalLayout_3.addWidget(self.editButton)
 
         self.deleteButton = QPushButton(self.widget_5)
         self.deleteButton.setObjectName(u"deleteButton")
+        self.deleteButton.setStyleSheet(u"background-color: #C0392B;   \n"
+"    color: white;         \n"
+"    border: none;          \n"
+"    padding: 5px 10px;        \n"
+"    border-radius: 4px;                 \n"
+"    font-family: 'Segoe UI';   \n"
+"    font-size: 8pt; ")
 
         self.verticalLayout_3.addWidget(self.deleteButton)
 
@@ -119,10 +151,6 @@ class Ui_MainWindow(object):
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 993, 21))
-        MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
 
@@ -136,13 +164,4 @@ class Ui_MainWindow(object):
         self.editButton.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c", None))
         self.deleteButton.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
-
-    def open_add_form(self):
-        """Открывает диалоговое окно добавления"""
-        dialog = QDialog(self)  # Создаем диалог
-        add_form = Ui_AddForm()  # Создаем UI формы
-        add_form.setupUi(dialog)  # Инициализируем UI в диалоге
-
-        # Показываем диалог как модальное окно
-        dialog.exec()
 
