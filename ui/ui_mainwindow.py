@@ -60,17 +60,28 @@ class Ui_MainWindow(object):
 
         self.findButton = QPushButton(self.widget_4)
         self.findButton.setObjectName(u"findButton")
-        self.findButton.setStyleSheet(u"background-color: #007ACC;  \n"
-"    color: white;         \n"
-"       \n"
-"    padding: 8px 5px;  \n"
-"    border-radius: 4px;       \n"
-"        \n"
-"    font-family: 'Segoe UI';   \n"
-"    font-size: 8pt; \n"
-"    padding-top: 6px;\n"
-"    padding-bottom: 4px;\n"
-"")
+        self.findButton.setStyleSheet(u"""
+                    QPushButton {
+                        background-color: #007ACC;
+                        color: white;
+                        padding: 6px 15px;
+                        border-radius: 4px;
+                        font-family: 'Segoe UI';
+                        font-size: 9pt;
+                    }
+                    QPushButton:hover {
+                        background-color: #0099FF;
+                    }
+                    QPushButton:pressed {
+                        background-color: #005A9E;
+                        padding-top: 9px;
+                        padding-bottom: 7px;
+                    }
+                    QPushButton:disabled {
+                        background-color: #3D3D40;
+                        color: #7A7A7A;
+                    }
+                """)
 
         self.verticalLayout_2.addWidget(self.findButton)
 
@@ -90,37 +101,86 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.addButton = QPushButton(self.widget_5)
         self.addButton.setObjectName(u"addButton")
-        self.addButton.setStyleSheet(u"background-color: #27AE60;     \n"
-"    color: white;         \n"
-"    border: none;          \n"
-"    padding: 5px 10px;        \n"
-"    border-radius: 4px;                 \n"
-"    font-family: 'Segoe UI';   \n"
-"    font-size: 8pt; ")
+        self.addButton.setStyleSheet(u"""
+                    QPushButton {
+                        background-color: #27AE60;
+                        color: white;
+                        border: none;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-family: 'Segoe UI';
+                        font-size: 8pt;
+                    }
+                    QPushButton:hover {
+                        background-color: #2ECC71;
+                    }
+                    QPushButton:pressed {
+                        background-color: #219653;
+                        padding-top: 9px;
+                        padding-bottom: 7px;
+                    }
+                    QPushButton:disabled {
+                        background-color: #3D3D40;
+                        color: #7A7A7A;
+                    }
+                """)
 
         self.verticalLayout_3.addWidget(self.addButton)
 
         self.editButton = QPushButton(self.widget_5)
         self.editButton.setObjectName(u"editButton")
-        self.editButton.setStyleSheet(u"background-color: #F39C12;       \n"
-"    color: white;         \n"
-"    border: none;          \n"
-"    padding: 5px 10px;        \n"
-"    border-radius: 4px;                 \n"
-"    font-family: 'Segoe UI';   \n"
-"    font-size: 8pt; ")
+        self.editButton.setStyleSheet(u"""
+                    QPushButton {
+                        background-color: #F39C12;
+                        color: white;
+                        border: none;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-family: 'Segoe UI';
+                        font-size: 8pt;
+                    }
+                    QPushButton:hover {
+                        background-color: #F1C40F;
+                    }
+                    QPushButton:pressed {
+                        background-color: #F39C12;
+                        padding-top: 9px;
+                        padding-bottom: 7px;
+                    }
+                    QPushButton:disabled {
+                        background-color: #3D3D40;
+                        color: #7A7A7A;
+                    }
+                """)
 
         self.verticalLayout_3.addWidget(self.editButton)
 
         self.deleteButton = QPushButton(self.widget_5)
         self.deleteButton.setObjectName(u"deleteButton")
-        self.deleteButton.setStyleSheet(u"background-color: #C0392B;   \n"
-"    color: white;         \n"
-"    border: none;          \n"
-"    padding: 5px 10px;        \n"
-"    border-radius: 4px;                 \n"
-"    font-family: 'Segoe UI';   \n"
-"    font-size: 8pt; ")
+        self.deleteButton.setStyleSheet(u" ")
+        self.deleteButton.setStyleSheet(u"""
+                    QPushButton {
+                        background-color: #C0392B;
+                        color: white;
+                        border: none;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-family: 'Segoe UI';
+                        font-size: 8pt;
+                    }
+                    QPushButton:hover {
+                        background-color: #E74C3C;
+                    }
+                    QPushButton:pressed {
+                        background-color: #A93226;
+                        padding-top: 9px;
+                        padding-bottom: 7px;
+                    }
+                    QPushButton:disabled {
+                        background-color: #3D3D40;
+                        color: #7A7A7A;
+                    }
+                """)
 
         self.verticalLayout_3.addWidget(self.deleteButton)
 
@@ -139,6 +199,51 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.tableView = QTableView(self.widget_3)
         self.tableView.setObjectName(u"tableView")
+        self.tableView.setStyleSheet(u"""
+                    QTableView {
+                        background-color: #252526;
+                        gridline-color: #3C3C3C;
+                        border-radius: 5px;
+                        border: 1px solid #3C3C3C;
+                        font-family: 'Segoe UI';
+                        font-size: 9pt;
+                        color: #CCCCCC;
+                    }
+                    QTableView QTableCornerButton::section {
+                        background-color: #2D2D30;
+                        border: none;
+                        border-bottom: 1px solid #3C3C3C;
+                        border-right: 1px solid #3C3C3C;
+                    }
+                    QHeaderView::section {
+                        background-color: #2D2D30;
+                        color: #FFFFFF;
+                        padding: 8px;
+                        border: none;
+                        font-weight: bold;
+                    }
+                    QTableView::item {
+                        padding: 8px;
+                        border-bottom: 1px solid #3C3C3C;
+                    }
+                    QTableView::item:selected {
+                        background-color: #094771;
+                        color: white;
+                    }
+                    QScrollBar:vertical {
+                        background: #252526;
+                        width: 12px;
+                        margin: 0px;
+                    }
+                    QScrollBar::handle:vertical {
+                        background: #3D3D40;
+                        min-height: 20px;
+                        border-radius: 6px;
+                    }
+                    QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                        background: none;
+                    }
+                """)
 
         self.gridLayout_3.addWidget(self.tableView, 0, 0, 1, 1)
 
