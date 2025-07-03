@@ -1,3 +1,5 @@
+#infrastructure.db.repositories.category_repository.py
+
 from sqlalchemy.orm import Session
 from core.model.category import Category
 from infrastructure.db.repositories.base_repository import BaseRepository
@@ -14,3 +16,6 @@ class CategoryRepository(BaseRepository):
     def search_by_partial_name(self, keyword: str):
         """Поиск категории по части имени"""
         return self.session.query(Category).filter(Category.name.ilike(f"%{keyword}%")).all()
+
+    def get_by_name(self, name: str):
+        return self.session.query(Category).filter_by(name=name).first()

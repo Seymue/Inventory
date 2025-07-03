@@ -1,3 +1,5 @@
+#infrastructure.db.repositories.object_repository.py
+
 from sqlalchemy.orm import Session
 from core.model.object import Object
 from infrastructure.db.repositories.base_repository import BaseRepository
@@ -21,4 +23,7 @@ class ObjectRepository(BaseRepository):
 
     def search_by_name(self, keyword: str):
         """Поиск по части имени"""
+        return self.session.query(Object).filter(Object.name.ilike(f"%{keyword}%")).all()
+
+    def search_by_name(self, keyword: str):
         return self.session.query(Object).filter(Object.name.ilike(f"%{keyword}%")).all()

@@ -1,3 +1,4 @@
+#core.model.category.py
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from core.model.base import Base
