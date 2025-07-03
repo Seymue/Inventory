@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>993</width>
-    <height>646</height>
+    <width>963</width>
+    <height>615</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #1E1E1E; </string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -36,7 +39,7 @@
           <item>
            <widget class="QFrame" name="frame">
             <property name="styleSheet">
-             <string notr="true">background-color: white;</string>
+             <string notr="true">background-color: #1E1E1E; </string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -55,10 +58,27 @@
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <widget class="QLineEdit" name="findText"/>
+                 <widget class="QLineEdit" name="findText">
+                  <property name="styleSheet">
+                   <string notr="true">color: white;</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="findButton">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #007ACC;  
+    color: white;         
+       
+    padding: 8px 5px;  
+    border-radius: 4px;       
+        
+    font-family: 'Segoe UI';   
+    font-size: 8pt; 
+    padding-top: 6px;
+    padding-bottom: 4px;
+</string>
+                  </property>
                   <property name="text">
                    <string>Найти</string>
                   </property>
@@ -75,7 +95,7 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>100</height>
+                 <height>120</height>
                 </size>
                </property>
                <property name="maximumSize">
@@ -87,6 +107,21 @@
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
                  <widget class="QPushButton" name="addButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #27AE60;
+    color: white;
+    border: none;          
+    padding: 5px 10px;        
+    border-radius: 4px;                 
+    font-family: 'Segoe UI';   
+    font-size: 8pt; </string>
+                  </property>
                   <property name="text">
                    <string>Добавить</string>
                   </property>
@@ -94,6 +129,15 @@
                 </item>
                 <item>
                  <widget class="QPushButton" name="editButton">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #F39C12;       
+    color: white;         
+    border: none;          
+    padding: 5px 10px;        
+    border-radius: 4px;                 
+    font-family: 'Segoe UI';   
+    font-size: 8pt; </string>
+                  </property>
                   <property name="text">
                    <string>Изменить</string>
                   </property>
@@ -101,6 +145,15 @@
                 </item>
                 <item>
                  <widget class="QPushButton" name="deleteButton">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #C0392B;   
+    color: white;         
+    border: none;          
+    padding: 5px 10px;        
+    border-radius: 4px;                 
+    font-family: 'Segoe UI';   
+    font-size: 8pt; </string>
+                  </property>
                   <property name="text">
                    <string>Удалить</string>
                   </property>
@@ -130,16 +183,6 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>993</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>
