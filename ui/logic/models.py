@@ -16,12 +16,23 @@ class ObjectTableModel(QAbstractTableModel):
         self.refresh()
 
     def refresh(self, filter_text=None):
+        # Уведомляем о начале изменения модели
         self.beginResetModel()
-        if filter_text:
-            self.objects = self.repository.search_by_name(filter_text)
-        else:
-            self.objects = self.repository.get_all()
-        self.endResetModel()
+
+        try:
+            if filter_text:
+                self.objects = self.repository.search_by_name(filter_text)
+            else:
+                self.objects = self.repository.get_all()
+        finally:
+            # Уведомляем о завершении изменения модели
+            self.endResetModel()
+
+        # Дополнительно уведомляем представление об изменениях
+        self.dataChanged.emit(
+            self.index(0, 0),
+            self.index(self.rowCount() - 1, self.columnCount() - 1)
+        )
 
     def rowCount(self, parent=None):
         return len(self.objects)

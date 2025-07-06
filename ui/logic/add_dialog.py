@@ -52,6 +52,10 @@ class AddDialog(QDialog, Ui_Dialog):
             object_repo = ObjectRepository(self.session)
             object_repo.add(obj)
 
+            # После добавления/обновления объекта
+            self.session.commit()  # Явный коммит
+            self.session.refresh(obj)  # Обновление состояния объекта
+
             self.accept()
 
         except ValueError:

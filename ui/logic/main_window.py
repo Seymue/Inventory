@@ -35,6 +35,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog.setWindowTitle("Добавление")
         if dialog.exec() == QDialog.Accepted:
             self.model.refresh()
+            self.tableView.viewport().update()
 
     def edit_object(self):
         index = self.tableView.currentIndex()

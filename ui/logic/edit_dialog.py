@@ -53,8 +53,7 @@ class EditDialog(QDialog, Ui_Dialog):
                 self.obj.location = location
 
             # Сохранение изменений
-            object_repo = ObjectRepository(self.session)
-            object_repo.update(self.obj)
+
 
             self.accept()
 
