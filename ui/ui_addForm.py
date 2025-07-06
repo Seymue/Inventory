@@ -72,11 +72,7 @@ class Ui_Dialog(object):
 
         self.horizontalLayout_2.addWidget(self.quantityLabel)
 
-        self.office_number_Label = QLabel(self.widget_4)
-        self.office_number_Label.setObjectName(u"office_number_Label")
-        self.office_number_Label.setStyleSheet(u"color: white;")
 
-        self.horizontalLayout_2.addWidget(self.office_number_Label)
 
         self.departament_number_Label = QLabel(self.widget_4)
         self.departament_number_Label.setObjectName(u"departament_number_Label")
@@ -148,15 +144,9 @@ class Ui_Dialog(object):
 
         self.horizontalLayout_3.addWidget(self.quantityText)
 
-        self.office_number_Text = QLineEdit(self.widget_5)
-        self.office_number_Text.setObjectName(u"office_number_Text")
-        self.office_number_Text.setStyleSheet(u"background-color: #3D3D40;   \n"
-"color: #FFFFFF;              \n"
-" border: 1px solid #555555;   \n"
-"border-radius: 3px;          \n"
-"padding: 5px;")
 
-        self.horizontalLayout_3.addWidget(self.office_number_Text)
+
+
 
         self.departament_number_Text = QLineEdit(self.widget_5)
         self.departament_number_Text.setObjectName(u"departament_number_Text")
@@ -234,7 +224,7 @@ class Ui_Dialog(object):
         self.number_inventory_Label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u041d\u043e\u043c\u0435\u0440 \u0438\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u0438\u0437\u0430\u0446\u0438\u0438</p></body></html>", None))
         self.typeLabel.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u0422\u0438\u043f</p></body></html>", None))
         self.quantityLabel.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u041a\u043e\u043b-\u0432\u043e</p></body></html>", None))
-        self.office_number_Label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u041d\u043e\u043c\u0435\u0440 \u043a\u0430\u0431\u0438\u043d\u0435\u0442\u0430</p></body></html>", None))
+
         self.departament_number_Label.setText(QCoreApplication.translate("Dialog", u"\u041d\u043e\u043c\u0435\u0440 \u043e\u0442\u0434\u0435\u043b\u0430", None))
         self.commentLabel.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439</p></body></html>", None))
         self.cancelButton.setText(QCoreApplication.translate("Dialog", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
