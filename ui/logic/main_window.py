@@ -1,11 +1,13 @@
 # ui/logic/main_window.py
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView, QDialog
 from ui.ui_mainwindow import Ui_MainWindow
 from .models import ObjectTableModel
 from .add_dialog import AddDialog
 from .edit_dialog import EditDialog
 from infrastructure.db.postgres import PostgresDB
 from core.settings import settings
+
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -30,6 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def add_object(self):
         dialog = AddDialog(self.session, self)
+        dialog.setWindowTitle("Добавление")
         if dialog.exec() == QDialog.Accepted:
             self.model.refresh()
 
@@ -41,6 +44,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         obj = self.model.get_object(index)
         dialog = EditDialog(self.session, obj, self)
+        dialog.setWindowTitle("Изменение")
         if dialog.exec() == QDialog.Accepted:
             self.model.refresh()
 
