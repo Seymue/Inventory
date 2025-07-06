@@ -1,5 +1,5 @@
 # ui/logic/main_window.py
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView, QDialog
 from ui.ui_mainwindow import Ui_MainWindow
 from .models import ObjectTableModel
 from .add_dialog import AddDialog
@@ -32,6 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = AddDialog(self.session, self)
         if dialog.exec() == QDialog.Accepted:
             self.model.refresh()
+            self.tableView.viewport().update()
 
     def edit_object(self):
         index = self.tableView.currentIndex()
