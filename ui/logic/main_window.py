@@ -1,5 +1,7 @@
 # ui/logic/main_window.py
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView, QDialog
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableView, QDialog, QApplication, QMenu
+from PySide6.QtGui import QAction
+from PySide6.QtCore import Qt
 from ui.ui_mainwindow import Ui_MainWindow
 from .models import ObjectTableModel
 from .add_dialog import AddDialog
@@ -29,6 +31,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.editButton.clicked.connect(self.edit_object)
         self.deleteButton.clicked.connect(self.delete_object)
         self.findButton.clicked.connect(self.find_objects)
+
+        # Настройка контекстного меню для таблицы
+        self.setup_table_context_menu()
 
     def add_object(self):
         dialog = AddDialog(self.session, self)
@@ -76,3 +81,71 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def closeEvent(self, event):
         self.session.close()
         super().closeEvent(event)
+
+
+
+    def setup_table_context_menu(self):
+        """Настройка контекстного меню для таблицы"""
+        # Разрешаем контекстное меню
+        self.tableView.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tableView.customContextMenuRequested.connect(self.show_context_menu)
+
+    def show_context_menu(self, pos):
+        """Показ контекстного меню в позиции курсора"""
+        # Создаем меню
+        menu = QMenu(self)
+
+        # Добавляем действия
+        add_action = QAction("Добавить", self)
+        add_action.triggered.connect(self.add_object)
+        menu.addAction(add_action)
+
+        # Проверяем, есть ли выделенная строка
+        selected = self.tableView.selectionModel().selectedRows(0)
+        if selected:
+            edit_action = QAction("Изменить", self)
+            edit_action.triggered.connect(self.edit_object)
+            menu.addAction(edit_action)
+
+            delete_action = QAction("Удалить", self)
+            delete_action.triggered.connect(self.delete_object)
+            menu.addAction(delete_action)
+
+            copy_action = QAction("Копировать", self)
+            copy_action.triggered.connect(self.copy_selected)
+            menu.addAction(copy_action)
+
+        # Добавляем разделитель
+        menu.addSeparator()
+
+        # Добавляем действие обновления
+        refresh_action = QAction("Обновить", self)
+        refresh_action.triggered.connect(self.refresh_table)
+        menu.addAction(refresh_action)
+
+        # Показываем меню в позиции курсора
+        menu.exec_(self.tableView.viewport().mapToGlobal(pos))
+
+    def copy_selected(self):
+        """Копирование выделенных данных в буфер обмена"""
+        selected = self.tableView.selectionModel().selectedRows()
+        if not selected:
+            return
+
+        # Получаем данные выделенных строк
+        clipboard_text = ""
+        for row_index in sorted(set(index.row() for index in selected)):
+            row_data = []
+            for col in range(self.model.columnCount()):
+                item = self.model.item(row_index, col)
+                row_data.append(item.text() if item else "")
+            clipboard_text += "\t".join(row_data) + "\n"
+
+        # Копируем в буфер обмена
+        QApplication.clipboard().setText(clipboard_text.strip())
+
+    def refresh_table(self):
+        """Обновление таблицы"""
+        # Здесь можно добавить логику перезагрузки данных
+        # Например: self.load_data_from_database()
+        QMessageBox.information(self, "Обновление", "Таблица обновлена")
