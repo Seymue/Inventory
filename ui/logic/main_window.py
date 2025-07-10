@@ -27,9 +27,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tableView.setSelectionBehavior(QTableView.SelectRows)
 
         # Подключение сигналов
-        self.addButton.clicked.connect(self.add_object)
-        self.editButton.clicked.connect(self.edit_object)
-        self.deleteButton.clicked.connect(self.delete_object)
         self.findButton.clicked.connect(self.find_objects)
 
         # Настройка контекстного меню для таблицы

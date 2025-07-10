@@ -101,90 +101,6 @@ class Ui_MainWindow(object):
         self.widget_5.setMaximumSize(QSize(16777215, 100))
         self.verticalLayout_3 = QVBoxLayout(self.widget_5)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.addButton = QPushButton(self.widget_5)
-        self.addButton.setObjectName(u"addButton")
-        self.addButton.setStyleSheet(u"""
-                    QPushButton {
-                        background-color: #27AE60;
-                        color: white;
-                        border: none;
-                        padding: 5px 10px;
-                        border-radius: 4px;
-                        font-family: 'Segoe UI';
-                        font-size: 8pt;
-                    }
-                    QPushButton:hover {
-                        background-color: #2ECC71;
-                    }
-                    QPushButton:pressed {
-                        background-color: #219653;
-                        padding-top: 9px;
-                        padding-bottom: 7px;
-                    }
-                    QPushButton:disabled {
-                        background-color: #3D3D40;
-                        color: #7A7A7A;
-                    }
-                """)
-
-        self.verticalLayout_3.addWidget(self.addButton)
-
-        self.editButton = QPushButton(self.widget_5)
-        self.editButton.setObjectName(u"editButton")
-        self.editButton.setStyleSheet(u"""
-                    QPushButton {
-                        background-color: #F39C12;
-                        color: white;
-                        border: none;
-                        padding: 5px 10px;
-                        border-radius: 4px;
-                        font-family: 'Segoe UI';
-                        font-size: 8pt;
-                    }
-                    QPushButton:hover {
-                        background-color: #F1C40F;
-                    }
-                    QPushButton:pressed {
-                        background-color: #F39C12;
-                        padding-top: 9px;
-                        padding-bottom: 7px;
-                    }
-                    QPushButton:disabled {
-                        background-color: #3D3D40;
-                        color: #7A7A7A;
-                    }
-                """)
-
-        self.verticalLayout_3.addWidget(self.editButton)
-
-        self.deleteButton = QPushButton(self.widget_5)
-        self.deleteButton.setObjectName(u"deleteButton")
-        self.deleteButton.setStyleSheet(u" ")
-        self.deleteButton.setStyleSheet(u"""
-                    QPushButton {
-                        background-color: #C0392B;
-                        color: white;
-                        border: none;
-                        padding: 5px 10px;
-                        border-radius: 4px;
-                        font-family: 'Segoe UI';
-                        font-size: 8pt;
-                    }
-                    QPushButton:hover {
-                        background-color: #E74C3C;
-                    }
-                    QPushButton:pressed {
-                        background-color: #A93226;
-                        padding-top: 9px;
-                        padding-bottom: 7px;
-                    }
-                    QPushButton:disabled {
-                        background-color: #3D3D40;
-                        color: #7A7A7A;
-                    }
-                """)
-
-        self.verticalLayout_3.addWidget(self.deleteButton)
 
 
         self.verticalLayout.addWidget(self.widget_5)
@@ -268,8 +184,5 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.findButton.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0439\u0442\u0438", None))
-        self.addButton.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
-        self.editButton.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c", None))
-        self.deleteButton.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
 

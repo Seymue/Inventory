@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>939</width>
-    <height>199</height>
+    <height>210</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,10 +55,10 @@ font-family: 'Segoe UI';          </string>
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Название&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="textFormat">
-               <enum>Qt::AutoText</enum>
+               <enum>Qt::TextFormat::AutoText</enum>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -140,7 +140,7 @@ font-family: 'Segoe UI';          </string>
          <item>
           <widget class="Line" name="line">
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -281,7 +281,7 @@ color:white;
 color:white;</string>
            </property>
            <property name="text">
-            <string>Добавить</string>
+            <string>Сохранить</string>
            </property>
           </widget>
          </item>

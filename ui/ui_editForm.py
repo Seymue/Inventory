@@ -1,9 +1,7 @@
-#ui.ui_editForm.py
-
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'addForm.ui'
+## Form generated from reading UI file 'editForm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -25,7 +23,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(939, 199)
+        Dialog.resize(939, 210)
         Dialog.setStyleSheet(u"background-color: #2D2D30;   \n"
 "color: #FFFFFF;    \n"
 "font-family: 'Segoe UI';          ")
@@ -33,6 +31,7 @@ class Ui_Dialog(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.widget = QWidget(Dialog)
         self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 0))
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.widget_3 = QWidget(self.widget)
@@ -48,8 +47,8 @@ class Ui_Dialog(object):
         self.nameLabel = QLabel(self.widget_4)
         self.nameLabel.setObjectName(u"nameLabel")
         self.nameLabel.setStyleSheet(u"color: white;")
-        self.nameLabel.setTextFormat(Qt.AutoText)
-        self.nameLabel.setAlignment(Qt.AlignCenter)
+        self.nameLabel.setTextFormat(Qt.TextFormat.AutoText)
+        self.nameLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_2.addWidget(self.nameLabel)
 
@@ -238,6 +237,6 @@ class Ui_Dialog(object):
         self.departament_number_Label.setText(QCoreApplication.translate("Dialog", u"\u041d\u043e\u043c\u0435\u0440 \u043e\u0442\u0434\u0435\u043b\u0430", None))
         self.commentLabel.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439</p></body></html>", None))
         self.cancelButton.setText(QCoreApplication.translate("Dialog", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
-        self.acceptButton.setText(QCoreApplication.translate("Dialog", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+        self.acceptButton.setText(QCoreApplication.translate("Dialog", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
     # retranslateUi
 
